@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Cinevo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#000;
+color:white;
+font-family:Inter,sans-serif;
+cursor:none;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.back-btn{
+position:fixed;
+top:25px;
+left:25px;
+font-size:2rem;
+cursor:pointer;
+z-index:9999;
+transition:0.3s;
+}
+
+.back-btn:hover{
+transform:scale(1.1);
+color:#bcaeff;
+}
+
+.box{
+width:500px;
+padding:50px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:25px;
+text-align:center;
+}
+
+h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+p{
+color:#cfcfcf;
+line-height:1.8;
+font-size:1.1rem;
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:linear-gradient(90deg,#3f4cff,#7b6fff);
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.button:hover{
+transform:scale(1.05);
+}
+
+.cursor-dot{
+width:14px;
+height:14px;
+background:#bcaeff;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+box-shadow:0 0 20px rgba(120,120,255,0.9);
+z-index:99999;
+}
+
+.cursor-ring{
+width:40px;
+height:40px;
+border:2px solid rgba(180,180,255,0.5);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99998;
+transition:0.15s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="back-btn" onclick="window.location.href='Cinevo.html'">
+❮
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div class="box">
+
+<h1>Contact Cinevo</h1>
+
+<p>
+officialcinevo@gmail.com
+<br><br>
+Watch. Feel. Experience Cinevo.
+</p>
+
+<a class="button"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=officialcinevo@gmail.com"
+target="_blank">
+Send Email
+</a>
+
+</div>
+
+<script>
+
+const dot=document.querySelector('.cursor-dot');
+const ring=document.querySelector('.cursor-ring');
+
+document.addEventListener('mousemove',e=>{
+
+dot.style.left=e.clientX+'px';
+dot.style.top=e.clientY+'px';
+
+ring.style.left=e.clientX+'px';
+ring.style.top=e.clientY+'px';
+
+});
+
+</script>
+
+</body>
+</html>
