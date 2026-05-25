@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinevo Shows</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#000;
+color:white;
+font-family:Inter,sans-serif;
+cursor:none;
+overflow-x:hidden;
+}
+
+header{
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+}
+
+.back-btn{
+position:fixed;
+top:25px;
+left:25px;
+font-size:2rem;
+cursor:pointer;
+z-index:9999;
+transition:0.3s;
+}
+
+.back-btn:hover{
+transform:scale(1.1);
+color:#bcaeff;
+}
+
+.hero{
+height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:5rem;
+}
+
+.hero p{
+margin-top:15px;
+color:#cfcfcf;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+padding:60px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:25px;
+padding:40px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.cursor-dot{
+width:14px;
+height:14px;
+background:#bcaeff;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+box-shadow:0 0 20px rgba(120,120,255,0.9);
+z-index:99999;
+}
+
+.cursor-ring{
+width:40px;
+height:40px;
+border:2px solid rgba(180,180,255,0.5);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99998;
+transition:0.15s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="back-btn" onclick="window.location.href='index.html'">
+❮
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header>
+
+<img src="Cinevo Logo.png" height="55">
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shows.html">Shows</a>
+<a href="movies.html">Movies</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Shows</h1>
+
+<p>
+Explore Cinevo animated series and cinematic worlds.
+</p>
+
+</section>
+
+<section class="grid">
+
+<div class="card">
+
+<h2>Neural</h2>
+
+<p>
+Industry Revealed — Episode 1
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Coming Soon</h2>
+
+<p>
+More Cinevo series will appear here soon.
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const dot=document.querySelector('.cursor-dot');
+const ring=document.querySelector('.cursor-ring');
+
+document.addEventListener('mousemove',e=>{
+
+dot.style.left=e.clientX+'px';
+dot.style.top=e.clientY+'px';
+
+ring.style.left=e.clientX+'px';
+ring.style.top=e.clientY+'px';
+
+});
+
+</script>
+
+</body>
+</html>
